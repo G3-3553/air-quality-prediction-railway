@@ -23,7 +23,7 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+ 
     <main>
         <h2 style="color:rgb(247, 141, 41); font-weight:bold;">Predict Air Quality</h2>
         <p style="color:white; font-weight: bolder;">Enter the <span style="color:rgb(247, 141, 41);">parameters</span> below to predict the <span style="color:rgb(247, 141, 41);">air quality </span>in your area.</p>
@@ -84,13 +84,16 @@
             })
             .then(response => response.json())
             .then(data => {
-                alert('Prediction: ' + data.prediction);
+                alert('Prediction: ' + data.Prediction);
             })
             .catch(error => {
                 console.error('Error:', error);
             });
         });
     </script>
+    {% if result_message %}
+    <h2>Result: {{ result_message }}</h2>
+    {% endif %}
 
     <!-- Footer -->
     <footer>
